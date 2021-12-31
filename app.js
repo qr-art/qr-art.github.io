@@ -18,7 +18,7 @@ const image_div = document.createElement("img")
       }
     })
 
-    console.log("all right2");
+    console.log("all right3");
 
 
 
