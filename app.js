@@ -18,6 +18,7 @@ const image_div = document.createElement("img")
       }
     })
 
+    console.log("all right");
 
 
 
