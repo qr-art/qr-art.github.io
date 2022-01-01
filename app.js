@@ -12,9 +12,11 @@ const image_div = document.createElement("img")
       for(var i = 0; i < json.data.length; i++) {
         const path = json.data[i].img;
         console.log(path)
-        image_div.setAttribute("src", path)
+        image_div.setAttribute("src", path);
+        image_div.setAttribute("width", 300)
 
-        document.body.appendChild(image_div);
+        const container = document.getElementsByClassName('art-image')[0];
+        container.appendChild(image_div);
       }
     })
 
