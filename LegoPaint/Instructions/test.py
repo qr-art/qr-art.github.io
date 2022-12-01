@@ -2,12 +2,29 @@ from gtts import gTTS
 from playsound import playsound
 import time
 import os
+import urllib.request
+import sys
 
+
+def connect(host='http://google.com'):
+    try:
+        urllib.request.urlopen(host) #Python 3.x
+        return True
+    except:
+        return False
 
 ### Read File with instructions
 
-path_to_file = 'instruction.csv'
-speed = 1.0 #seconds
+# python instruction.csv 1
+
+if not connect():
+    raise Exception("No Internet Connection!")
+
+# path_to_file = 'instruction.csv'
+# speed = 1
+
+path_to_file = sys.argv[0]
+speed = sys.argv[1] #seconds
 
 with open(path_to_file) as f:
     contents = f.readlines()
@@ -27,3 +44,5 @@ for inst in contents:
 
         print(f'row: {row} - column: {column} - {color_code}')
         time.sleep(speed)
+
+
